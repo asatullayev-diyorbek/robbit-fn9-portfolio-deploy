@@ -1,0 +1,464 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --blue: #2878ff;
+    --blue-dark: #155eef;
+    --text: #111827;
+    --muted: #667085;
+    --border: rgba(255, 255, 255, 0.85);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse at 50% 42%,
+            rgba(120, 174, 255, 0.25), transparent 42%),
+        radial-gradient(ellipse at 75% 70%,
+            rgba(174, 157, 255, 0.18), transparent 35%),
+        linear-gradient(135deg, #f9fbff, #f0f6ff 50%, #ffffff);
+}
+
+/* Orqa fondagi dekorativ doiralar */
+
+.background-circle {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 680px;
+    height: 680px;
+    border: 1px solid rgba(75, 140, 255, 0.12);
+    background: rgba(255, 255, 255, 0.08);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle-two {
+    width: 490px;
+    height: 490px;
+    background: linear-gradient(
+        135deg,
+        rgba(116, 177, 255, 0.15),
+        rgba(168, 155, 255, 0.13)
+    );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle-three {
+    width: 360px;
+    height: 360px;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Asosiy karta */
+
+.profile-card {
+    width: 100%;
+    max-width: 590px;
+    position: relative;
+    padding: 42px 44px 25px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 38px;
+
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.76),
+        rgba(255, 255, 255, 0.52)
+    );
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    box-shadow:
+        0 30px 80px rgba(57, 113, 210, 0.12),
+        0 8px 24px rgba(75, 125, 210, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+
+    animation: appear 0.8s ease both;
+}
+
+/* Logotip */
+
+.avatar-wrapper {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 29px;
+    position: relative;
+}
+
+.avatar-border {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 42px;
+    background: linear-gradient(135deg, #ffffff, #b6d7ff);
+    border: 1px solid rgba(91, 155, 255, 0.3);
+    box-shadow:
+        0 12px 35px rgba(44, 122, 255, 0.2),
+        0 0 0 9px rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+}
+
+.avatar-border img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 36px;
+}
+
+.online-dot {
+    position: absolute;
+    right: 4px;
+    bottom: 8px;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: #22c55e;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+}
+
+/* Sarlavha va tavsif */
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #5689df;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+h1 {
+    font-size: clamp(27px, 4vw, 36px);
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: -1.6px;
+}
+
+h1 span {
+    color: var(--blue);
+}
+
+.description {
+    max-width: 420px;
+    margin: 17px auto 27px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* Telegram tugmasi */
+
+.telegram-button {
+    min-height: 66px;
+    width: 100%;
+    max-width: 370px;
+    margin: 0 auto;
+    padding: 0 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 700;
+
+    background: linear-gradient(110deg, #438dff, #1768f5 55%, #21b3f4);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 26px rgba(36, 113, 255, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.telegram-button:hover {
+    transform: translateY(-3px);
+    filter: saturate(1.12);
+    box-shadow:
+        0 18px 34px rgba(36, 113, 255, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.telegram-button:active {
+    transform: scale(0.98);
+}
+
+.telegram-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.telegram-icon svg {
+    width: 21px;
+    height: 21px;
+    fill: #fff;
+}
+
+.button-arrow {
+    margin-left: auto;
+    font-size: 25px;
+    font-weight: 400;
+    transition: transform 0.25s ease;
+}
+
+.telegram-button:hover .button-arrow {
+    transform: translate(3px, -3px);
+}
+
+/* Pastki uchta element */
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 35px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(117, 151, 205, 0.16);
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+    color: #475467;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.feature + .feature {
+    border-left: 1px solid rgba(117, 151, 205, 0.2);
+}
+
+.feature-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+}
+
+.feature-icon svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.blue {
+    color: #1683ff;
+    background: linear-gradient(145deg, #e7f2ff, #d9e9ff);
+}
+
+.purple {
+    color: #7955f5;
+    background: linear-gradient(145deg, #f0eaff, #e4dcff);
+}
+
+.green {
+    color: #0ab978;
+    background: linear-gradient(145deg, #e2fff2, #d1f5e6);
+}
+
+/* Karta pastidagi matn */
+
+.card-footer {
+    margin-top: 25px;
+    padding-top: 17px;
+    border-top: 1px solid rgba(117, 151, 205, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #98a2b3;
+    font-size: 11px;
+}
+
+.footer-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4b91ff;
+}
+
+/* Dekorativ nuqtalar */
+
+.decoration {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    opacity: 0.4;
+    background-image: radial-gradient(#8eb9ff 2px, transparent 2px);
+    background-size: 15px 15px;
+    pointer-events: none;
+}
+
+.dots-left {
+    left: 10%;
+    top: 28%;
+}
+
+.dots-right {
+    right: 10%;
+    bottom: 25%;
+}
+
+/* Animatsiya */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Telefon ekranlari */
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 25px 16px;
+    }
+
+    .profile-card {
+        max-width: 420px;
+        padding: 32px 21px 22px;
+        border-radius: 29px;
+    }
+
+    .avatar-wrapper {
+        width: 145px;
+        height: 145px;
+        margin-bottom: 25px;
+    }
+
+    .avatar-border {
+        border-radius: 34px;
+    }
+
+    .avatar-border img {
+        border-radius: 29px;
+    }
+
+    h1 {
+        font-size: 28px;
+        letter-spacing: -1px;
+    }
+
+    .eyebrow {
+        font-size: 9px;
+        letter-spacing: 1.7px;
+    }
+
+    .description {
+        font-size: 13px;
+        margin: 14px auto 23px;
+    }
+
+    .telegram-button {
+        min-height: 59px;
+        border-radius: 18px;
+        font-size: 15px;
+    }
+
+    .features {
+        margin-top: 27px;
+        padding-top: 22px;
+    }
+
+    .feature {
+        font-size: 10px;
+        gap: 9px;
+    }
+
+    .feature-icon {
+        width: 39px;
+        height: 39px;
+        border-radius: 13px;
+    }
+
+    .card-footer {
+        font-size: 10px;
+    }
+
+    .circle-one {
+        width: 370px;
+        height: 370px;
+    }
+
+    .circle-two {
+        width: 300px;
+        height: 300px;
+    }
+
+    .dots-left {
+        left: 2%;
+    }
+
+    .dots-right {
+        right: 2%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
